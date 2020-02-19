@@ -17,7 +17,6 @@
     // No need to change anything ABOVE this line ^
 
 
-
       class App extends React.Component{
         constructor(props){
           super(props)
@@ -29,10 +28,10 @@
         }
 
         nextMood = () => {
-          if(currentMood === moods.length - 1){
-            this.setState({ currentMood: currentMood = 0 })
+          if(this.state.currentMood === this.state.moods.length - 1){
+            this.setState({ currentMood: this.state.currentMood = 0 })
           } else {
-            this.setState({ currentMood: currentMood + 1 })
+            this.setState({ currentMood: this.state.currentMood + 1 })
           }
         }
 
@@ -67,21 +66,31 @@
       class MoodMeter extends React.Component{
         render(){
           return(
+            <div>
+              <Header />
               <h3>Mood Options:</h3>
               <p style={{fontSize: "40px"}}>{ this.props.moodOptions }</p>
-              <button onClick={ }>Click Here For Next Mood Option</button>
+              
+              <button onClick={ this.props.next }>Click Here For Next Mood Option</button>
+              
               <br />
               <br />
+              
               <h3>Save your mood here!</h3>
+              
               <button onClick={ this.props.setThisMood }>Yup, this is me right now.</button>
+              
               <h3>My mood:</h3>
+              
               <p style={{fontSize: "40px"}}>{ this.props.set }</p>
+            </div>
           )
         }
       }
 
 
-
+//BIG SHOUTOUT TO CRUZ FOR BEING SUCH AN AWESOME TEAM-MATE AND POINTING ME IN THE RIGHT DIRECTION WITHOUT JUST GIVING ME THE ANSWER! :D
+//Heya is cool too I guess. (she helpd too. andee little brain no smort. big dum somtime.)
 
 
 
